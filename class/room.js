@@ -45,8 +45,10 @@ class Room {
 
     getItemByName(name) {
         // Retrieves an item from a room by item name
-
-        // Your code here
+        //const found = array1.find(element => element > 10);
+        const item = this.items.find(obj => obj.name === name);
+        this.items.splice(this.items.indexOf(item), 1);
+        return item;
     }
 
 }
