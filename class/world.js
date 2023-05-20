@@ -48,14 +48,20 @@ class World {
             else newItem = new Item(curr.name, curr.description);
 
             for (let j = 0; j < roomList.length; j++) {
+                console.log('roomList', roomList);
                 let roomID = roomList[i].id;
                 if (curr.room === roomID) {
-                    roomList[i]['items'] = curr;
-                    console.log(`put ${curr.name} in room ${roomID}`);
-                    console.log(roomList[i])
+                    roomList[i]['items'] = newItem;
+                    //console.log(`put ${curr.name} in room ${roomID}`);
+                    //console.log(roomList[i])
                     break;
             }
                 }
+
+            // let roomVal = this.rooms[curr.room]
+            // console.log('roomVal', roomVal);
+            // console.log('this.rooms', this.rooms);
+            // roomVal.items.push(newItem);
 
 
             }
