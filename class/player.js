@@ -45,14 +45,15 @@ class Player {
 
     eatItem(itemName) {
         // Allow the player to eat food items, but not non-food items
-
-        // Your code here
+        const item = this.items.find(obj => obj.name === itemName);
+        if (item.food) this.items.splice(this.items.indexOf(item), 1);
+        else console.log('That item is not food');
     }
 
     getItemByName(name) {
         // Retrieves an item from a player's inventory by item name
         const item = this.items.find(obj => obj.name === name);
-        this.items.splice(this.items.indexOf(item), 1);
+
         return item;
     }
 }

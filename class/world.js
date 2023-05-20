@@ -40,6 +40,18 @@ class World {
         // Instantiate items using data stored in the itemList variable
             // A non-food item should be instantiated as an instance of the `Item` class
             // A food item should be instantiated as an instance of the `Food` class
+        let food, item;
+
+        itemList.forEach(obj => {
+            let name = obj.name
+            let desc = obj.description
+
+            if (obj.isFood) food = new Food(name, desc);
+            else item = new Item(name, desc);
+
+        })
+        // console.log(food);
+        //console.log(item);
 
         // Your code here
     }
