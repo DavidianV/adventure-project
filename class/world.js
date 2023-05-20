@@ -45,17 +45,22 @@ class World {
             let curr = itemList[i];
             let newItem;
             if (curr.isFood) newItem = new Food(curr.name, curr.description);
-
             else newItem = new Item(curr.name, curr.description);
 
-            roomList.forEach(room => {
-                if (room.id === curr.room) {}
-                room.items.push(newItem)
-                console.log(room.items);
+            for (let j = 0; j < roomList.length; j++) {
+                let roomID = roomList[i].id;
+                if (curr.room === roomID) {
+                    roomList[i]['items'] = curr;
+                    console.log(`put ${curr.name} in room ${roomID}`);
+                    console.log(roomList[i])
+                    break;
+            }
+                }
 
 
-            })
+            }
         }
+    }
 
 
 
@@ -63,8 +68,8 @@ class World {
         //console.log(item);
 
         // Your code here
-    }
-}
+
+
 
 module.exports = {
   World,

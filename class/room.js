@@ -1,10 +1,10 @@
 class Room {
 
-    constructor(name, description) {
+    constructor(name, description, exits={}, items=[]) {
         this.name = name;
         this.description = description;
-        this.exits = {};
-        this.items = [];
+        this.exits = exits;
+        this.items = items;
     }
 
     printRoom() {
